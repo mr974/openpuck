@@ -110,7 +110,7 @@ jobs:
       - name: Compile OpenPuck
         run: |
           mkdir -p build/openpuck build/cache/openpuck
-          make build BUILD_PATH=build/cache/openpuck OUTPUT_DIR=build/openpuck
+          make build BUILD_PATH=build/cache/openpuck OUTPUT_DIR=build/openpuck EXTRA_FLAGS="-DOPK_PWR_SWITCH=1"
 
       - name: Generate UF2 (standard)
         run: ./gen_uf2.sh build/openpuck/OpenPuck.ino.hex build/openpuck/OpenPuck.ino.uf2
